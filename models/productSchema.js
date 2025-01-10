@@ -1,37 +1,6 @@
 const mongoose = require("mongoose");
 
-const productCategories = [
-  "Fashion & Apparel",
-  "Men's Wear",
-  "Women's Wear",
-  "Kids' Wear",
-  "Footwear",
-  "Electronics & Gadgets",
-  "Mobile Devices",
-  "Consumer Electronics",
-  "Gaming",
-  "Home & Kitchen",
-  "Home Essentials",
-  "Kitchen Appliances",
-  "Storage Solutions",
-  "Health & Wellness",
-  "Fitness Equipment",
-  "Personal Care",
-  "Nutrition",
-  "Beauty & Personal Care",
-  "Books & Stationery",
-  "Books",
-  "Stationery",
-  "Groceries & Food",
-  "Baby & Kids Products",
-  "Sports & Outdoors",
-  "Automotive & Accessories",
-  "Pet Supplies",
-  "Jewelry & Accessories",
-  "Handicrafts & Local Products",
-  "Technology & Office Supplies",
-  "Seasonal Categories",
-];
+const productCategories = ["electronics", "clothing", "books", "home", "toys"];
 
 const productSchema = new mongoose.Schema(
   {
