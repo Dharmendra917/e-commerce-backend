@@ -39,14 +39,14 @@ exports.readProducts = catchAsyncErrors(async (req, res, next) => {
 
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   const file = req.file;
+  console.log(file);
+  if (!file) return next(new ErrorHandler("Select Product Image", 404, false));
   let product = await productModel.findById(req.params.id);
   if (!product) {
     return res
       .status(404)
       .json({ success: false, message: "Product not found" });
   }
-
-  if (!file) return next(new ErrorHandler("Select Product Image", 404, true));
 
   if (product.image.url) {
     await imagekit.deleteFile(product.image.fileId);
