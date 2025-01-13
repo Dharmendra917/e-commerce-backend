@@ -4,7 +4,8 @@ const { catchAsyncErrors } = require("./catchAsyncErrors.js");
 const userModel = require("../models/userSchema.js");
 
 exports.userIsAuth = catchAsyncErrors(async (req, res, next) => {
-  const token = req.cookies[`user`] || req.header("Authorization");
+  const token = req.cookies[`user`] || req.headers[`authorization`];
+  console.log(req.headers, "arhin hai kya?");
   if (!token) return next(new ErrorHandler("Please Sigin First!", 401, false));
 
   const { id } = jwt.verify(token, process.env.JWT_SECRET);

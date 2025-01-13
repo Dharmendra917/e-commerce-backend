@@ -19,7 +19,7 @@ This is the backend service for the E-Commerce application. It provides APIs for
 
 1. Start the development server:
    ```sh
-   npm run dev
+   npx nodemon
    ```
 2. The server will be running at `http://localhost:4999`.
 
